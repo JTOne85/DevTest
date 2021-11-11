@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using Utilities;
-using Utilities.Interfaces;
 
 namespace InterviewTests
 {
@@ -18,7 +16,14 @@ namespace InterviewTests
         [TestCase(24, "24th")]
         public void NumberOrdinal(int input, string expectedResult)
         {
+            // Arrange
+            IOrdinalHelper ordinalHelper = null;
             
+            // Act
+            var result = ordinalHelper.GetNumberWithOrdinal(input);
+            
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

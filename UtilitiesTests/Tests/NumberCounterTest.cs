@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using Utilities;
-using Utilities.Interfaces;
 
 namespace InterviewTests
 {
@@ -14,7 +12,14 @@ namespace InterviewTests
         [TestCase(" / * 4 ttt 8|", 2)]
         public void CountNumbers(string input, int expectedCount)
         {
+            // Arrange
+            INumberCounter numberCounter = null;
             
+            // Act
+            var result = numberCounter.CountNumbers(input);
+            
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedCount));
         }
     }
 }
